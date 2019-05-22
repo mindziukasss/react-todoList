@@ -4,14 +4,11 @@ import PropTypes from 'prop-types';
 
 class TodoItem extends Component {
     getStyle = () => {
-        if (this.props.todo.completed) {
-            return {
-                textDecoration: 'line-through'
-            }
-        } else {
-            return  {
-                textDecoration: 'none'
-            }
+        return {
+            background: '#f4f4f4',
+            padding: '10px',
+            borderBottom: '1px #ccc dotted',
+            textDecoration: this.props.todo.completed ? 'line-through' : 'none'
         }
     }
 
@@ -29,8 +26,5 @@ TodoItem.propType = {
     todos: PropTypes.object.isRequired
 }
 
-const  itemStyle = {
-    backgroundColor: 'green'
-}
 
 export default TodoItem;
